@@ -3,11 +3,11 @@ from selenium.webdriver.common.by import By
 import time
 
 browser = webdriver.Chrome()
-# Ожидание каждого элемента в течение 5 секунд:
+# Wait the element in 5 sec
 browser.implicitly_wait(5)
 
 try:
-    browser.get("http://suninjuly.github.io/wait2.html")
+    browser.get("http://suninjuly.github.io/wait1.html")
 
     button = browser.find_element(By.TAG_NAME, "button")
     button.click()
@@ -16,6 +16,6 @@ try:
     assert "successful" in message.text
 
 finally:
-    time.sleep(1)
-    # закрываем браузер после всех манипуляций
+    time.sleep(3)
+    # close the browser
     browser.quit()
